@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Web\{AuthController, CalendarController, CampusController, CityController, EventController, HolidayController, PostController, StateController};
+use App\Http\Controllers\Web\{AuthController, CalendarController, CampusController, CityController, EventController, HolidayController, PostController, StateController, StopController, TransportController};
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/calendars', CalendarController::class);
     Route::resource('/events', EventController::class);
     Route::resource('/holidays', HolidayController::class);
+
+    Route::resource('/campuses/{campus}/transports', TransportController::class);
+    Route::resource('/campuses/{campus}/transports/{transport}/stops', StopController::class);
 });
-
-

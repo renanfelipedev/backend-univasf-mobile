@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Api\{PostController, CalendarController, EventController};
+use App\Http\Controllers\Api\{PostController, CalendarController, CampusController, EventController, TransportController};
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +22,5 @@ use App\Http\Controllers\Api\{PostController, CalendarController, EventControlle
 Route::apiResource('/posts', PostController::class);
 Route::apiResource('/calendars', CalendarController::class);
 Route::apiResource('/events', EventController::class);
+Route::apiResource('/campuses/{campus}/transports', TransportController::class);
+Route::apiResource('/campuses', CampusController::class);

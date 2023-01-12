@@ -23,7 +23,7 @@ class EventController extends Controller
         return view('events.create', compact('calendars'));
     }
 
-    public function store(Request $request, )
+    public function store(Request $request,)
     {
         $data = $request->validate([
             'title' => 'required',
@@ -52,6 +52,7 @@ class EventController extends Controller
             'start_at' => 'nullable|date',
             'end_at' => 'nullable|date',
             'description' => 'nullable',
+            'link' => 'nullable',
             'date' => 'nullable|date',
             'calendar_id' => 'nullable'
         ]);

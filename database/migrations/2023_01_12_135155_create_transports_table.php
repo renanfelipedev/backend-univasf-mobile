@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('transports', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->timestamp('start_at')->nullable();
-            $table->timestamp('end_at')->nullable();
-            $table->datetime('date')->nullable();
+            $table->string('busname');
             $table->string('description')->nullable();
-            $table->string('link')->nullable();
-            $table->foreignId('calendar_id')->nullable()->constrained('calendars')->onDelete('CASCADE');
+            $table->string('origin');
+            $table->string('destination');
+            $table->foreignId('campus_id')->constrained('campuses')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('transports');
     }
 };

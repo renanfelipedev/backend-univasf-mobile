@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('stops', function (Blueprint $table) {
             $table->id();
+            $table->time('time');
+            $table->string('title');
+            $table->string('observation')->nullable();
+            $table->foreignId('transport_id')->constrained('transports')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('stops');
     }
 };
