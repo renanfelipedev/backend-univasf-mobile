@@ -19,4 +19,9 @@ class Restaurant extends Model
             (now()->format('H:i') >= $this->lunch_start_at && now()->format('H:i') < $this->lunch_end_at) ||
             (now()->format('H:i') >= $this->dinner_start_at && now()->format('H:i') < $this->dinner_end_at);
     }
+
+    public function meals()
+    {
+        return $this->hasMany(Meal::class);
+    }
 }

@@ -5,7 +5,7 @@
 
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <h1>{{ env('APP_NAME') }}</h1>
+                <img src="{{ url('images/logo.jpg') }}" alt="UNIVASF Mobile" class="img-fluid p-4">
             </div>
             <div class="card-body">
                 <form action="{{ route('login') }}" method="POST">

@@ -58,6 +58,10 @@
                                 @method('DELETE')
                             </form>
 
+                            <a href="{{ route('restaurants.show', $restaurant) }}" class="btn btn-xs btn-default">
+                                <i class="fa fa-search"></i> ver detalhes
+                            </a>
+
                             <a href="{{ route('restaurants.edit', $restaurant) }}" class="btn btn-xs btn-default">
                                 <i class="fa fa-edit"></i> editar
                             </a>

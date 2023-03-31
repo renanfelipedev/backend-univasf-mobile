@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -18,6 +19,21 @@ class RestaurantController extends Controller
     public function create()
     {
         return view('restaurants.create');
+    }
+
+    public function show(Restaurant $restaurant, Request $request)
+    {
+        $week = [];
+        foreach (range(0, 4) as $day) {
+            $referenceDay = $request->day ? Carbon::parse($request->day) : now();
+            $date = $referenceDay->startOfWeek()->addDay($day);
+            $week[$day] = [
+                'hasMeals' => $restaurant->meals()->where('day', $date)->exists(),
+                'date' => $date
+            ];
+        }
+
+        return view('restaurants.show', compact('restaurant', 'week'));
     }
 
     public function store(Request $request)
