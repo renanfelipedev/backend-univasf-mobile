@@ -10,4 +10,9 @@ class Food extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'meal_id'];
+
+    public function meal()
+    {
+        return $this->belongsTo(Meal::class);
+    }
 }

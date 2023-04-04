@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Api\{PostController, CalendarController, CampusController, EventController, RestaurantController, TransportController};
+use App\Http\Controllers\Api\{PostController, CalendarController, CampusController, EventController, MealController, RestaurantController, TransportController};
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +25,4 @@ Route::apiResource('/events', EventController::class);
 Route::apiResource('/campuses/{campus}/transports', TransportController::class);
 Route::apiResource('/campuses', CampusController::class);
 Route::get('/restaurants', [RestaurantController::class, 'index']);
+Route::get('/restaurants/{restaurant}/meals', [MealController::class, 'index']);

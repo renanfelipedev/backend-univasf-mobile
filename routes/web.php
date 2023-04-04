@@ -1,10 +1,8 @@
 <?php
 
-use App\Http\Controllers\FoodController;
-use App\Http\Controllers\MealController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Web\{AuthController, CalendarController, CampusController, CityController, EventController, HolidayController, PostController, RestaurantController, StateController, StopController, TransportController};
+use App\Http\Controllers\Web\{FoodController, MealController, AuthController, CalendarController, CampusController, CityController, EventController, HolidayController, PostController, RestaurantController, StateController, StopController, TransportController};
 
 /*
 |--------------------------------------------------------------------------
