@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Web\{FoodController, MealController, AuthController, CalendarController, CampusController, CityController, EventController, HolidayController, PostController, RestaurantController, StateController, StopController, TransportController};
+use App\Http\Controllers\Web\{AnnouncementController, FoodController, MealController, AuthController, CalendarController, CampusController, CityController, EventController, HolidayController, PostController, RestaurantController, StateController, StopController, TransportController};
 
 /*
 |--------------------------------------------------------------------------
@@ -31,48 +31,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/holidays', HolidayController::class);
     Route::resource('/restaurants', RestaurantController::class);
     Route::resource('/restaurants/{restaurant}/meals', MealController::class);
+    Route::resource('/announcements', AnnouncementController::class);
     Route::delete('/foods/{food}', [FoodController::class, 'destroy'])->name('foods.destroy');
 
 
     Route::resource('/campuses/{campus}/transports', TransportController::class);
     Route::resource('/campuses/{campus}/transports/{transport}/stops', StopController::class);
 });
-
-// <div class="card card-primary">
-// <div class="card-header">
-// <h3 class="card-title">General</h3>
-// <div class="card-tools">
-// <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-// <i class="fas fa-minus"></i>
-// </button>
-// </div>
-// </div>
-// <div class="card-body">
-// <div class="form-group">
-// <label for="inputName">Project Name</label>
-// <input type="text" id="inputName" class="form-control">
-// </div>
-// <div class="form-group">
-// <label for="inputDescription">Project Description</label>
-// <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-// </div>
-// <div class="form-group">
-// <label for="inputStatus">Status</label>
-// <select id="inputStatus" class="form-control custom-select">
-// <option selected="" disabled="">Select one</option>
-// <option>On Hold</option>
-// <option>Canceled</option>
-// <option>Success</option>
-// </select>
-// </div>
-// <div class="form-group">
-// <label for="inputClientCompany">Client Company</label>
-// <input type="text" id="inputClientCompany" class="form-control">
-// </div>
-// <div class="form-group">
-// <label for="inputProjectLeader">Project Leader</label>
-// <input type="text" id="inputProjectLeader" class="form-control">
-// </div>
-// </div>
-
-// </div>
