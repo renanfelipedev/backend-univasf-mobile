@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Web\{AnnouncementController, FoodController, MealController, AuthController, CalendarController, CampusController, CityController, EventController, HolidayController, PostController, RestaurantController, StateController, StopController, TransportController};
+use App\Http\Controllers\Web\{AnnouncementController, FoodController, MealController, AuthController, CalendarController, CalendarEventController, CampusController, CityController, EventController, HolidayController, PostController, RestaurantController, StateController, StopController, TransportController};
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +33,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/restaurants/{restaurant}/meals', MealController::class);
     Route::resource('/announcements', AnnouncementController::class);
     Route::delete('/foods/{food}', [FoodController::class, 'destroy'])->name('foods.destroy');
-
+    Route::resource('/calendar-events', CalendarEventController::class)->only(['index', 'store', 'destroy']);
 
     Route::resource('/campuses/{campus}/transports', TransportController::class);
     Route::resource('/campuses/{campus}/transports/{transport}/stops', StopController::class);
+    Route::get('/transports', [TransportController::class, 'select_campus'])->name('transports.select-campus');
 });

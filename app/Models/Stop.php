@@ -9,5 +9,5 @@ class Stop extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['time', 'description', 'observation'];
+    protected $fillable = ['time', 'title', 'description', 'observation'];
 }

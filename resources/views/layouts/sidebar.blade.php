@@ -11,8 +11,8 @@
         </div>
 
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column">
+                <li class="nav-header text-muted">Comunicação</li>
                 <li class="nav-item">
                     <a href="{{ route('posts.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-newspaper"></i>
@@ -27,6 +27,8 @@
                     </a>
                 </li>
 
+                <li class="nav-header"></li>
+
                 <li class="nav-item">
                     <a href="{{ route('restaurants.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-utensils"></i>
@@ -34,7 +36,46 @@
                     </a>
                 </li>
 
-                <li class="nav-header text-muted">Localizações</li>
+                <li class="nav-item">
+                    <a href="{{ route('transports.select-campus') }}" class="nav-link">
+                        <i class="nav-icon fas fa-bus"></i>
+                        <p>Transporte Universitário</p>
+                    </a>
+                </li>
+
+                <li class="nav-header text-muted">Calendário Acadêmico</li>
+
+                <li class="nav-item">
+                    <a href="{{ route('calendars.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-days"></i>
+                        <p>Calendários</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('calendar-events.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-days"></i>
+                        <p>Eventos de Calendário</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('holidays.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-xmark"></i>
+                        <p>Feriados</p>
+                    </a>
+                </li>
+
+                <li class="nav-header text-muted">Datas</li>
+
+                <li class="nav-item">
+                    <a href="{{ route('events.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-check"></i>
+                        <p>Eventos</p>
+                    </a>
+                </li>
+
+                {{-- <li class="nav-header text-muted">Localizações</li>
 
                 <li class="nav-item">
                     <a href="{{ route('states.index') }}" class="nav-link">
@@ -55,33 +96,7 @@
                         <i class="nav-icon fas fa-school"></i>
                         <p>Campi</p>
                     </a>
-                </li>
-
-                <li class="nav-header text-muted">Principais Datas</li>
-
-                <li class="nav-item">
-                    <a href="{{ route('calendars.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-days"></i>
-                        <p>Calendários</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('holidays.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-xmark"></i>
-                        <p>Feriados</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('events.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-check"></i>
-                        <p>Eventos</p>
-                    </a>
-                </li>
-
-
-
+                </li> --}}
             </ul>
         </nav>
 

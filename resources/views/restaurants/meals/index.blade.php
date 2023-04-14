@@ -6,7 +6,7 @@
 @endsection
 
 @section('page-content')
-    <a href="{{ route('restaurants.show', $restaurant) }}" class="btn btn-secondary mb-4">
+    <a href="{{ route('restaurants.show', [$restaurant, 'day' => request('day')]) }}" class="btn btn-secondary mb-4">
         <i class="fa fa-arrow-left"></i>
     </a>
 
