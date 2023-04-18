@@ -4,7 +4,7 @@
 
 @section('page-content')
     <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4">
             <div class="card card-body row">
                 <form action="{{ route('calendar-events.store') }}" method="POST">
                     @csrf
@@ -51,9 +51,9 @@
                 </form>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-lg-8">
             <div class="card card-body table-responsive">
-                <table class="table table-borderless table-hover table-sm">
+                <table class="table table-hover table-sm">
                     <thead>
                         <tr>
                             <th>Nome</th>

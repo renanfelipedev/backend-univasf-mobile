@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Api\{PostController, CalendarController, CampusController, EventController, MealController, RestaurantController, TransportController};
+use App\Http\Controllers\Api\{AnnouncementController, PostController, CalendarController, CalendarEventController, CampusController, EventController, MealController, RestaurantController, TransportController};
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +19,13 @@ use App\Http\Controllers\Api\{PostController, CalendarController, CampusControll
 //     return $request->user();
 // });
 
-Route::apiResource('/posts', PostController::class);
-Route::apiResource('/calendars', CalendarController::class);
-Route::apiResource('/events', EventController::class);
-Route::apiResource('/campuses/{campus}/transports', TransportController::class);
+Route::get('/posts', PostController::class);
+Route::get('/events', EventController::class);
+Route::get('/calendars', CalendarController::class);
+Route::get('/restaurants', RestaurantController::class);
+Route::get('/announcements', AnnouncementController::class);
+Route::get('/calendar-events', CalendarEventController::class);
+Route::get('/restaurants/{restaurant}/meals', MealController::class);
+
 Route::apiResource('/campuses', CampusController::class);
-Route::get('/restaurants', [RestaurantController::class, 'index']);
-Route::get('/restaurants/{restaurant}/meals', [MealController::class, 'index']);
+Route::apiResource('/campuses/{campus}/transports', TransportController::class);

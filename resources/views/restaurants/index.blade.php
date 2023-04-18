@@ -9,7 +9,7 @@
     </a>
 
     <div class="card card-body table-responsive">
-        <table class="table table-borderless table-hover table-sm">
+        <table class="table  table-hover table-sm">
             <thead>
                 <tr>
                     <th>Nome</th>

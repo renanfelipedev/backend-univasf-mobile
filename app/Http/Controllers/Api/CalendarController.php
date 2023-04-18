@@ -8,8 +8,8 @@ use App\Models\Calendar;
 
 class CalendarController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
-        return Calendar::all();
+        return response(Calendar::all());
     }
 }

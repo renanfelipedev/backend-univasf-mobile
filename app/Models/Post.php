@@ -20,6 +20,6 @@ class Post extends Model
 
     public function getFullSlugAttribute()
     {
-        return "https://portais.univasf.edu.br/noticias/{$this->attributes['slug']}";
+        return "https://portais.univasf.edu.br/{$this->attributes['slug']}";
     }
 }

@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
-        return Restaurant::all();
+        return response(Restaurant::all());
     }
 }

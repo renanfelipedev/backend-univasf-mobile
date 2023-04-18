@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class EventController extends Controller
 {
-    public function index(Request $request)
+    public function __invoke(Request $request)
     {
         $day = $request->day;
 

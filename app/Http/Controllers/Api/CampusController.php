@@ -10,7 +10,7 @@ class CampusController extends Controller
 {
     public function index()
     {
-        return Campus::all();
+        return response(Campus::all());
     }
 
     public function show(Campus $campus)

@@ -9,7 +9,7 @@
     </a>
 
     <div class="card card-body table-responsive">
-        <table class="table table-borderless table-hover table-sm">
+        <table class="table  table-hover table-sm">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -18,9 +18,9 @@
             <tbody>
                 @forelse($calendars as $calendar)
                     <tr class="text-sm">
-                        <td class="col-4">{{ $calendar->title }}</td>
+                        <td class="col-lg-4">{{ $calendar->title }}</td>
 
-                        <td class="col-8">
+                        <td class="col-lg-8">
                             <form action="{{ route('calendars.destroy', $calendar) }}" method="POST"
                                 id="delete-calendars-{{ $loop->iteration }}"
                                 onsubmit="return confirm('Deseja realmente excluir?');">

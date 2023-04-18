@@ -10,27 +10,31 @@
 
             <div class="form-group">
                 <label for="title">Título</label>
-                <input type="text" name="title" id="title" @class(["form-control", 'is-invalid' => $errors->has('title')]) value="{{ old('title', $post->title) }}">
+                <input type="text" name="title" id="title" @class(['form-control', 'is-invalid' => $errors->has('title')])
+                    value="{{ old('title', $post->title) }}">
             </div>
 
             <div class="form-group">
                 <label for="body">Corpo</label>
-                <textarea name="body" id="body" @class(["form-control", 'is-invalid' => $errors->has('body')]) cols="30" rows="5">{{ old('body', $post->body) }}</textarea>
+                <textarea name="body" id="body" @class(['form-control', 'is-invalid' => $errors->has('body')]) cols="30" rows="5">{{ old('body', $post->body) }}</textarea>
             </div>
 
             <div class="form-group">
                 <label for="published_at">Data de publicação</label>
-                <input type="date" name="published_at" id="published_at" @class(["form-control", 'is-invalid' => $errors->has('published_at')]) value="{{ old('published_at', $post->published_at) }}">
+                <input type="date" name="published_at" id="published_at" @class(['form-control', 'is-invalid' => $errors->has('published_at')])
+                    value="{{ old('published_at', $post->published_at) }}">
             </div>
 
             <div class="form-group">
                 <label for="image_url">Url da Imagem</label>
-                <input type="text" name="image_url" id="image_url" @class(["form-control", 'is-invalid' => $errors->has('image_url')]) value="{{ old('image_url', $post->image_url) }}">
+                <input type="text" name="image_url" id="image_url" @class(['form-control', 'is-invalid' => $errors->has('image_url')])
+                    value="{{ old('image_url', $post->image_url) }}">
             </div>
 
             <div class="form-group">
-                <label for="slug">Slug</label>
-                <input type="text" name="slug" id="slug" @class(["form-control", 'is-invalid' => $errors->has('slug')]) value="{{ old('slug', $post->slug) }}">
+                <label for="slug">Link externo</label>
+                <input type="text" name="slug" id="slug" @class(['form-control', 'is-invalid' => $errors->has('slug')])
+                    value="{{ old('slug', $post->slug) }}">
             </div>
 
             <div class="form-group">

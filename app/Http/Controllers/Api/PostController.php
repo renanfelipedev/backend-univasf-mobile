@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
-        return Post::all();
+        return response(Post::orderByDesc('created_at')->get());
     }
 }

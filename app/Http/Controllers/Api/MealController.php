@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class MealController extends Controller
 {
-    public function index(Restaurant $restaurant, Request $request)
+    public function __invoke(Restaurant $restaurant, Request $request)
     {
         $day = $request->day ? Carbon::parse($request->day) : null;
 

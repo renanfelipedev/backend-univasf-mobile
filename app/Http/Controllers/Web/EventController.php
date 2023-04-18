@@ -56,7 +56,7 @@ class EventController extends Controller
             'date' => 'nullable|date',
             'calendar_id' => 'nullable'
         ]);
-
+        dd($data);
         $event->update($data);
         $event->save();
 
