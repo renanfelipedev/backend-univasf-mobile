@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Api\{AnnouncementController, PostController, CalendarController, CalendarEventController, CampusController, EventController, MealController, RestaurantController, TransportController};
+use App\Http\Controllers\Api\{AnnouncementController, AuthController, PostController, CalendarController, CalendarEventController, CampusController, EventController, MealController, RestaurantController, TransportController};
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,8 @@ use App\Http\Controllers\Api\{AnnouncementController, PostController, CalendarCo
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+Route::post('/login', [AuthController::class, 'store'])->name('login');
 
 Route::get('/posts', PostController::class);
 Route::get('/events', EventController::class);
