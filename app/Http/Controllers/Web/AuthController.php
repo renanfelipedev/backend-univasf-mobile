@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\SGS\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,6 +11,12 @@ class AuthController extends Controller
 {
     public function create()
     {
+        // $usuario = Usuario::where('ds_login', 'thiago.aureliom')->first();
+
+        // foreach ($usuario->vinculos as $vinculo) {
+        //     dump($vinculo->toArray());
+        // }
+        // dd();
         return view('auth.login');
     }
 

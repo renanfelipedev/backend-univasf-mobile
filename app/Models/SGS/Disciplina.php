@@ -14,6 +14,11 @@ class Disciplina extends Model
     protected $primaryKey = 'cd_disciplina';
     public $incrementing = false;
 
+    public function getDsDisciplinaAttribute()
+    {
+        return ucwords(mb_strtolower($this->attributes['ds_disciplina'], 'UTF-8'));
+    }
+
     public function historico()
     {
         return $this->hasMany(Historico::class, 'cd_disciplina');

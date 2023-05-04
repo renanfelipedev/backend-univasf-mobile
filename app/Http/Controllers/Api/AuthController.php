@@ -11,11 +11,10 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'ds_login' => 'required',
-            'ds_senha' => 'required'
+            'login' => 'required',
         ]);
 
-        $usuario = Usuario::where('ds_login', $request->ds_login)->first();
+        $usuario = Usuario::where('ds_login', $request->login)->first();
 
         $token = auth()->guard('api')->login($usuario);
         $user = auth()->guard('api')->user();
@@ -24,9 +23,10 @@ class AuthController extends Controller
             'token' => $token,
             'type' => 'Bearer',
             'user' => [
-                'id_usuario' => $user->id_usuario,
-                'ds_cpf' => $user->ds_cpf,
-                'ds_nomepessoa' => $user->pessoa->ds_nomepessoa
+                'id' => $user->id_usuario,
+                'cpf' => $user->ds_cpf,
+                'nome' => $user->pessoa->ds_nomepessoa,
+                'email' => $user->pessoa->ds_emailprincipal
             ]
         ]);
     }

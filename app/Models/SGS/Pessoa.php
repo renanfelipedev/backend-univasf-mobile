@@ -14,4 +14,14 @@ class Pessoa extends Model
     protected $primaryKey = 'ds_cpf';
     protected $keyType = 'string';
     public $incrementing = false;
+
+    public function getDsNomepessoaAttribute()
+    {
+        return ucwords(strtolower($this->attributes['ds_nomepessoa']));
+    }
+
+    public function getDsEmailprincipalAttribute()
+    {
+        return strtolower($this->attributes['ds_emailprincipal']);
+    }
 }

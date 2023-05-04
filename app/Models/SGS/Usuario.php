@@ -31,7 +31,7 @@ class Usuario extends Authenticatable implements JWTSubject
         return $this->belongsTo(Pessoa::class, 'ds_cpf');
     }
 
-    public function aluno()
+    public function vinculos()
     {
         return $this->hasMany(Aluno::class, 'ds_cpf', 'ds_cpf')->orderByDesc('dt_ultimasituacao');
     }

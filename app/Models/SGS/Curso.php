@@ -13,4 +13,9 @@ class Curso extends Model
     protected $table = 'sgs.cursos';
     protected $primaryKey = 'id_curso';
     public $incrementing = false;
+
+    public function getDsNomecursoAttribute()
+    {
+        return ucwords(mb_strtolower($this->attributes['ds_nomecurso'], 'UTF-8'));
+    }
 }

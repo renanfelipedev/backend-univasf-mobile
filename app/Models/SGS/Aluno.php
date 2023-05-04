@@ -14,7 +14,7 @@ class Aluno extends Model
     protected $primaryKey = 'ds_matricula';
     protected $keyType = 'string';
     public $incrementing = false;
-    protected $with = ['pessoa'];
+    protected $with = ['curso', 'situacao', 'historico.disciplina'];
 
     public function pessoa()
     {
@@ -26,14 +26,9 @@ class Aluno extends Model
         return $this->hasOneThrough(Curso::class, CursoOfertado::class, 'id_cursoofertado', 'id_curso', 'id_cursoofertado', 'id_curso');
     }
 
-    public function disciplinas()
+    public function historico()
     {
-        return $this
-            ->belongsToMany(Disciplina::class, 'sgs.historicoalunos', 'ds_matricula', 'cd_disciplina')
-            ->as('historico')
-            ->orderByPivot('nm_ano')
-            ->orderByPivot('nm_semestre')
-            ->withPivot(['id_historicoalunos', 'nm_ano', 'nm_semestre', 'nm_nota', 'ds_conceito', 'ds_situacaodisciplina']);
+        return $this->hasMany(Historico::class, 'ds_matricula')->orderByDesc('nm_ano')->orderByDesc('nm_semestre');
     }
 
     public function situacao()
