@@ -93,6 +93,21 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'sismapci' => [
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST_SISMAPCI', '127.0.0.1'),
+            'port' => env('DB_PORT_SISMAPCI', '5432'),
+            'database' => env('DB_DATABASE_SISMAPCI', 'forge'),
+            'username' => env('DB_USERNAME_SISMAPCI', 'forge'),
+            'password' => env('DB_PASSWORD_SISMAPCI', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'search_path' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),

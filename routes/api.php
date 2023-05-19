@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\{AnnouncementController, AuthController, PostController, CalendarController, CalendarEventController, CampusController, DisciplinaController, EventController, HistoricoController, MealController, RestaurantController, TransportController, VinculoController};
+use App\Http\Controllers\Api\SISMAPCI\ResearcherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,8 @@ use App\Http\Controllers\Api\{AnnouncementController, AuthController, PostContro
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::apiResource('/vinculos', VinculoController::class);
-    Route::apiResource('/vinculos/{vinculo}/historico', HistoricoController::class);
 });
+Route::apiResource('/vinculos/{vinculo}/historico', HistoricoController::class);
 
 Route::post('/login', [AuthController::class, 'store'])->name('login');
 
@@ -32,3 +33,5 @@ Route::get('/restaurants/{restaurant}/meals', MealController::class);
 
 Route::apiResource('/campuses', CampusController::class);
 Route::apiResource('/campuses/{campus}/transports', TransportController::class);
+
+Route::apiResource('/researchers', ResearcherController::class);
